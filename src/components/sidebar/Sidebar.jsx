@@ -12,31 +12,23 @@ import {
   WorkOutline,
   Report,
 } from "@material-ui/icons";
+import { useState } from "react";
+import SidebarMenu from "../sidebarMenu/SidebarMenu";
 import "./sidebar.css";
 
 export default function Sidebar() {
-  const SidebarMenu = ({ params }) => {
-    const { title, items } = params;
-    return (
-      <div className="sidebarMenu">
-        <h3 className="sidebarTitle">{title}</h3>
-        <ul className="sidebarList">
-          {Object.keys(items).map((key) => (
-            <li className="sidebarListItem">
-              {items[key]}
-              {key}
-            </li>
-          ))}
-        </ul>
-      </div>
-    );
-  };
+  const [current, setCurrent] = useState({
+    title: "Dashboard",
+    camp: "Home",
+  });
 
   return (
     <div className="sidebar">
       <div className="sidebarWrapper">
         <SidebarMenu
           params={{
+            current,
+            setCurrent,
             title: "Dashboard",
             items: {
               Home: <LineStyle className="sidebarIcon" />,
@@ -48,6 +40,8 @@ export default function Sidebar() {
 
         <SidebarMenu
           params={{
+            current,
+            setCurrent,
             title: "Quick Menu",
             items: {
               Users: <PermIdentity className="sidebarIcon" />,
@@ -60,17 +54,21 @@ export default function Sidebar() {
 
         <SidebarMenu
           params={{
+            current,
+            setCurrent,
             title: "Notifications",
             items: {
               Mail: <MailOutline className="sidebarIcon" />,
               Feedback: <DynamicFeed className="sidebarIcon" />,
-              Sales: <ChatBubbleOutline className="sidebarIcon" />,
+              Message: <ChatBubbleOutline className="sidebarIcon" />,
             },
           }}
         />
 
         <SidebarMenu
           params={{
+            current,
+            setCurrent,
             title: "Staff",
             items: {
               Manage: <WorkOutline className="sidebarIcon" />,

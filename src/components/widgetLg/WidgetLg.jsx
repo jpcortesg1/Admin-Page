@@ -7,7 +7,6 @@ export default function WidgetLg() {
 
   const TrUser = ({ params }) => {
     const { img, name, date, amount, status } = params;
-    console.log("🚀 ~ file: WidgetLg.jsx ~ line 10 ~ TrUser ~ status", status);
     return (
       <tr className="widgetLgTr">
         <td className="widgetLUser">
@@ -36,30 +35,52 @@ export default function WidgetLg() {
     <div className="widgetLg">
       <h3 className="widgetLgTitle">Latest transactions</h3>
       <table className="widgetLgTable">
-        <tr className="widgetLgTr">
-          <th className="widgetLgTh">Customer</th>
-          <th className="widgetLgTh">Date</th>
-          <th className="widgetLgTh">Amount</th>
-          <th className="widgetLgTh">Status</th>
-        </tr>
-        <TrUser
-          params={{ ...params, status: status[Math.floor(Math.random() * 3)] }}
-        />
-        <TrUser
-          params={{ ...params, status: status[Math.floor(Math.random() * 3)] }}
-        />
-        <TrUser
-          params={{ ...params, status: status[Math.floor(Math.random() * 3)] }}
-        />
-        <TrUser
-          params={{ ...params, status: status[Math.floor(Math.random() * 3)] }}
-        />
-        <TrUser
-          params={{ ...params, status: status[Math.floor(Math.random() * 3)] }}
-        />
-        <TrUser
-          params={{ ...params, status: status[Math.floor(Math.random() * 3)] }}
-        />
+        <thead>
+          <tr className="widgetLgTr">
+            <th className="widgetLgTh">Customer</th>
+            <th className="widgetLgTh">Date</th>
+            <th className="widgetLgTh">Amount</th>
+            <th className="widgetLgTh">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <TrUser
+            params={{
+              ...params,
+              status: status[Math.floor(Math.random() * 3)],
+            }}
+          />
+          <TrUser
+            params={{
+              ...params,
+              status: status[Math.floor(Math.random() * 3)],
+            }}
+          />
+          <TrUser
+            params={{
+              ...params,
+              status: status[Math.floor(Math.random() * 3)],
+            }}
+          />
+          <TrUser
+            params={{
+              ...params,
+              status: status[Math.floor(Math.random() * 3)],
+            }}
+          />
+          <TrUser
+            params={{
+              ...params,
+              status: status[Math.floor(Math.random() * 3)],
+            }}
+          />
+          <TrUser
+            params={{
+              ...params,
+              status: status[Math.floor(Math.random() * 3)],
+            }}
+          />
+        </tbody>
       </table>
     </div>
   );
