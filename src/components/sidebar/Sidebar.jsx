@@ -15,68 +15,70 @@ import {
 import "./sidebar.css";
 
 export default function Sidebar() {
+  const SidebarMenu = ({ params }) => {
+    const { title, items } = params;
+    return (
+      <div className="sidebarMenu">
+        <h3 className="sidebarTitle">{title}</h3>
+        <ul className="sidebarList">
+          {Object.keys(items).map((key) => (
+            <li className="sidebarListItem">
+              {items[key]}
+              {key}
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  };
+
   return (
     <div className="sidebar">
       <div className="sidebarWrapper">
-        <div className="sidebarMenu">
-          <h3 className="sidebarTitle">Dashboard</h3>
-          <ul className="sidebarList">
-            <li className="sidebarListItem active">
-              <LineStyle className="sidebarIcon" /> Home
-            </li>
-            <li className="sidebarListItem">
-              <Timeline /> Analytics
-            </li>
-            <li className="sidebarListItem">
-              <TrendingUp className="sidebarIcon" /> Sales
-            </li>
-          </ul>
-        </div>
-        <div className="sidebarMenu">
-          <h3 className="sidebarTitle">Quick Menu</h3>
-          <ul className="sidebarList">
-            <li className="sidebarListItem active">
-              <PermIdentity className="sidebarIcon" /> Users
-            </li>
-            <li className="sidebarListItem">
-              <Storefront /> Products
-            </li>
-            <li className="sidebarListItem">
-              <AttachMoney className="sidebarIcon" /> Transaction
-            </li>
-            <li className="sidebarListItem">
-              <BarChart className="sidebarIcon" /> Report
-            </li>
-          </ul>
-        </div>
-        <div className="sidebarMenu">
-          <h3 className="sidebarTitle">Notifications</h3>
-          <ul className="sidebarList">
-            <li className="sidebarListItem active">
-              <MailOutline className="sidebarIcon" /> Mail
-            </li>
-            <li className="sidebarListItem">
-              <DynamicFeed /> Feedback
-            </li>
-            <li className="sidebarListItem">
-              <ChatBubbleOutline className="sidebarIcon" /> Sales
-            </li>
-          </ul>
-        </div>
-        <div className="sidebarMenu">
-          <h3 className="sidebarTitle">Staff</h3>
-          <ul className="sidebarList">
-            <li className="sidebarListItem active">
-              <WorkOutline className="sidebarIcon" /> Manage
-            </li>
-            <li className="sidebarListItem">
-              <Timeline /> Analytics
-            </li>
-            <li className="sidebarListItem">
-              <Report className="sidebarIcon" /> Reports
-            </li>
-          </ul>
-        </div>
+        <SidebarMenu
+          params={{
+            title: "Dashboard",
+            items: {
+              Home: <LineStyle className="sidebarIcon" />,
+              Analytics: <Timeline className="sidebarIcon" />,
+              Sales: <TrendingUp className="sidebarIcon" />,
+            },
+          }}
+        />
+
+        <SidebarMenu
+          params={{
+            title: "Quick Menu",
+            items: {
+              Users: <PermIdentity className="sidebarIcon" />,
+              Products: <Storefront className="sidebarIcon" />,
+              Transaction: <AttachMoney className="sidebarIcon" />,
+              Report: <BarChart className="sidebarIcon" />,
+            },
+          }}
+        />
+
+        <SidebarMenu
+          params={{
+            title: "Notifications",
+            items: {
+              Mail: <MailOutline className="sidebarIcon" />,
+              Feedback: <DynamicFeed className="sidebarIcon" />,
+              Sales: <ChatBubbleOutline className="sidebarIcon" />,
+            },
+          }}
+        />
+
+        <SidebarMenu
+          params={{
+            title: "Staff",
+            items: {
+              Manage: <WorkOutline className="sidebarIcon" />,
+              Analytics: <Timeline className="sidebarIcon" />,
+              Reports: <Report className="sidebarIcon" />,
+            },
+          }}
+        />
       </div>
     </div>
   );
