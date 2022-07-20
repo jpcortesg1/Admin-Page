@@ -11,16 +11,20 @@ import {
   ChatBubbleOutline,
   WorkOutline,
   Report,
-} from "@material-ui/icons";
-import { useState } from "react";
+} from "@mui/icons-material";
+import { useState, useEffect } from "react";
 import SidebarMenu from "../sidebarMenu/SidebarMenu";
+import { useLocation } from "react-router-dom";
 import "./sidebar.css";
 
 export default function Sidebar() {
-  const [current, setCurrent] = useState({
-    title: "Dashboard",
-    camp: "Home",
-  });
+  const [current, setCurrent] = useState({});
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    pathname === "/" && setCurrent({ title: "Dashboard", camp: "Home" });
+    pathname === "/users" && setCurrent({ title: "Quick Menu", camp: "Users" });
+  }, [pathname]);
 
   return (
     <div className="sidebar">
@@ -31,9 +35,9 @@ export default function Sidebar() {
             setCurrent,
             title: "Dashboard",
             items: {
-              Home: <LineStyle className="sidebarIcon" />,
-              Analytics: <Timeline className="sidebarIcon" />,
-              Sales: <TrendingUp className="sidebarIcon" />,
+              Home: { icon: <LineStyle className="sidebarIcon" />, path: "/" },
+              Analytics: { icon: <Timeline className="sidebarIcon" /> },
+              Sales: { icon: <TrendingUp className="sidebarIcon" /> },
             },
           }}
         />
@@ -44,10 +48,13 @@ export default function Sidebar() {
             setCurrent,
             title: "Quick Menu",
             items: {
-              Users: <PermIdentity className="sidebarIcon" />,
-              Products: <Storefront className="sidebarIcon" />,
-              Transaction: <AttachMoney className="sidebarIcon" />,
-              Report: <BarChart className="sidebarIcon" />,
+              Users: {
+                icon: <PermIdentity className="sidebarIcon" />,
+                path: "/users",
+              },
+              Products: { icon: <Storefront className="sidebarIcon" /> },
+              Transaction: { icon: <AttachMoney className="sidebarIcon" /> },
+              Report: { icon: <BarChart className="sidebarIcon" /> },
             },
           }}
         />
@@ -58,9 +65,9 @@ export default function Sidebar() {
             setCurrent,
             title: "Notifications",
             items: {
-              Mail: <MailOutline className="sidebarIcon" />,
-              Feedback: <DynamicFeed className="sidebarIcon" />,
-              Message: <ChatBubbleOutline className="sidebarIcon" />,
+              Mail: { icon: <MailOutline className="sidebarIcon" /> },
+              Feedback: { icon: <DynamicFeed className="sidebarIcon" /> },
+              Message: { icon: <ChatBubbleOutline className="sidebarIcon" /> },
             },
           }}
         />
@@ -71,9 +78,9 @@ export default function Sidebar() {
             setCurrent,
             title: "Staff",
             items: {
-              Manage: <WorkOutline className="sidebarIcon" />,
-              Analytics: <Timeline className="sidebarIcon" />,
-              Reports: <Report className="sidebarIcon" />,
+              Manage: { icon: <WorkOutline className="sidebarIcon" /> },
+              Analytics: { icon: <Timeline className="sidebarIcon" /> },
+              Reports: { icon: <Report className="sidebarIcon" /> },
             },
           }}
         />

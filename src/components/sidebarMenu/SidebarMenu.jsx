@@ -1,18 +1,25 @@
-import "./sidebarMenu.css"
+import { useNavigate } from "react-router-dom";
+import "./sidebarMenu.css";
 
 export default function SidebarMenu({ params }) {
   const { title, items, current, setCurrent } = params;
+  const navigate = useNavigate();
+  const navigateTo = (path, key) => {
+    setCurrent({ title, camp: key });
+    path && navigate(`${path}`);
+  };
 
   const renderItems = () => {
     return Object.keys(items).map((key, index) => {
       const isActive = key === current.camp && title === current.title;
+      const { icon, path } = items[key];
       return (
         <li
           className={`sidebarListItem ${isActive && "active"}`}
           key={index}
-          onClick={() => setCurrent({ title, camp: key })}
+          onClick={() => navigateTo(path, key)}
         >
-          {items[key]}
+          {icon}
           {key}
         </li>
       );

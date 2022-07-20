@@ -1,4 +1,4 @@
-import { NotificationsNone, Language, Settings } from "@material-ui/icons";
+import { NotificationsNone, Language, Settings } from "@mui/icons-material";
 import "./topbar.css";
 
 export default function Topbar() {
@@ -20,7 +20,11 @@ export default function Topbar() {
           <div className="topbarIconContainer">
             <Settings />
           </div>
-          <img src="https://images.pexels.com/photos/9750469/pexels-photo-9750469.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="topAvatar" />
+          <img
+            src="https://images.pexels.com/photos/9750469/pexels-photo-9750469.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+            className="topAvatar"
+          />
         </div>
       </div>
     </div>
