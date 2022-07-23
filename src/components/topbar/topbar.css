@@ -5,6 +5,7 @@
   position: sticky;
   top: 0;
   z-index: 999;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .topbarWrapper {
@@ -49,7 +50,7 @@
   font-size: 13px;
 }
 
-.topAvatar{
+.topAvatar {
   width: 34px;
   height: 34px;
   border-radius: 50%;

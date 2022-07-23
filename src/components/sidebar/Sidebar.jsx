@@ -23,6 +23,8 @@ export default function Sidebar() {
 
   useEffect(() => {
     pathname === "/" && setCurrent({ title: "Dashboard", camp: "Home" });
+    pathname.includes("/user") &&
+      setCurrent({ title: "Quick Menu", camp: "Users" });
     pathname === "/users" && setCurrent({ title: "Quick Menu", camp: "Users" });
   }, [pathname]);
 
@@ -52,7 +54,10 @@ export default function Sidebar() {
                 icon: <PermIdentity className="sidebarIcon" />,
                 path: "/users",
               },
-              Products: { icon: <Storefront className="sidebarIcon" /> },
+              Products: {
+                icon: <Storefront className="sidebarIcon" />,
+                path: "/products",
+              },
               Transaction: { icon: <AttachMoney className="sidebarIcon" /> },
               Report: { icon: <BarChart className="sidebarIcon" /> },
             },

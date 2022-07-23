@@ -1,0 +1,81 @@
+.newUser {
+  flex: 4;
+  min-height: calc(100vh - 90px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 21px;
+}
+
+.newUserForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.newUserFormItem {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  margin-right: 20px;
+}
+
+.newUserFormLabel {
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgb(151, 150, 150);
+}
+
+.newUserFormInput {
+  margin-top: 10px;
+  height: 20px;
+  padding: 20px;
+  font-size: 13px;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+.newUserGender {
+  display: flex;
+  height: 40px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+.newUserFormLabel.newUserFormLabel-gender {
+  flex: 1;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+}
+
+.newUserFormInput.newUserFormInput-gender {
+  margin-top: 0;
+  margin-right: 5px;
+}
+
+.newUserSelect {
+  margin-top: 13px;
+  padding-left: 13px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+.newUserButton {
+  width: 200px;
+  background-color: darkblue;
+  color: white;
+  padding: 8px 13px;
+  font-weight: 600;
+  border-radius: 13px;
+  margin: 0 auto;
+  margin-top: 21px;
+}
