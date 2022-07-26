@@ -23,9 +23,10 @@ export default function Sidebar() {
 
   useEffect(() => {
     pathname === "/" && setCurrent({ title: "Dashboard", camp: "Home" });
-    pathname.includes("/user") &&
+    pathname.toUpperCase().includes("USER") &&
       setCurrent({ title: "Quick Menu", camp: "Users" });
-    pathname === "/users" && setCurrent({ title: "Quick Menu", camp: "Users" });
+    pathname.toUpperCase().includes("PRODUCT") &&
+      setCurrent({ title: "Quick Menu", camp: "Products" });
   }, [pathname]);
 
   return (

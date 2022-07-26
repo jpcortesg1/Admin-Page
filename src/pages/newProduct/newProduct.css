@@ -1,0 +1,81 @@
+.newProduct {
+  flex: 4;
+  padding: 21px;
+}
+
+.newProductForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.newProductFormItem {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  margin-right: 20px;
+}
+
+.newProductFormLabel {
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgb(151, 150, 150);
+}
+
+.newProductFormInput {
+  margin-top: 10px;
+  height: 20px;
+  padding: 20px;
+  font-size: 13px;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+.newProductFormInputFile{
+  margin-top: 13px;
+}
+
+.newProductGender {
+  display: flex;
+  height: 40px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+.newProductFormLabel.newProductFormLabel-gender {
+  flex: 1;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+}
+
+.newProductFormInput.newProductFormInput-gender {
+  margin-top: 0;
+  margin-right: 5px;
+}
+
+.newProductSelect {
+  margin-top: 13px;
+  padding-left: 13px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+.newProductButton {
+  width: 200px;
+  background-color: darkblue;
+  color: white;
+  padding: 8px 13px;
+  font-weight: 600;
+  border-radius: 13px;
+  margin: 0 auto;
+  margin-top: 21px;
+}

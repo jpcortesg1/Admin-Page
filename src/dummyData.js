@@ -45,6 +45,21 @@ export const userData = [
   },
 ];
 
+export const productData = [
+  {
+    name: "Jan",
+    sales: 4000,
+  },
+  {
+    name: "Feb",
+    sales: 3000,
+  },
+  {
+    name: "Mar",
+    sales: 5000,
+  },
+];
+
 const avatar =
   "https://images.pexels.com/photos/57416/cat-sweet-kitty-animals-57416.jpeg";
 
@@ -128,5 +143,91 @@ export const dataTable = [
     email: "juan@mail.com",
     status: "active",
     transaction: "$120.00",
+  },
+];
+
+const productImage =
+  "https://images.pexels.com/photos/3825517/pexels-photo-3825517.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
+
+export const productRows = [
+  {
+    id: 1,
+    name: "Apple Airpod",
+    productImage,
+    stock: 123,
+    status: "active",
+    price: "$120.00",
+  },
+  {
+    id: 2,
+    name: "Apple Airpod",
+    productImage,
+    stock: 123,
+    status: "active",
+    price: "$120.00",
+  },
+  {
+    id: 3,
+    name: "Apple Airpod",
+    productImage,
+    stock: 123,
+    status: "active",
+    price: "$120.00",
+  },
+  {
+    id: 4,
+    name: "Apple Airpod",
+    productImage,
+    stock: 123,
+    status: "active",
+    price: "$120.00",
+  },
+  {
+    id: 5,
+    name: "Apple Airpod",
+    productImage,
+    stock: 123,
+    status: "active",
+    price: "$120.00",
+  },
+  {
+    id: 6,
+    name: "Apple Airpod",
+    productImage,
+    stock: 123,
+    status: "active",
+    price: "$120.00",
+  },
+  {
+    id: 7,
+    name: "Apple Airpod",
+    productImage,
+    stock: 123,
+    status: "active",
+    price: "$120.00",
+  },
+  {
+    id: 8,
+    name: "Apple Airpod",
+    productImage,
+    stock: 123,
+    status: "active",
+    price: "$120.00",
+  },
+  {
+    id: 9,
+    name: "Apple Airpod",
+    productImage,
+    stock: 123,
+    status: "active",
+    price: "$120.00",
+  },
+  {
+    id: 10,
+    name: "Apple Airpod",
+    productImage,
+    stock: 123,
+    status: "active",
+    price: "$120.00",
   },
 ];
